@@ -21,7 +21,36 @@ function validateForm() {
         }
     });
 
-    return inputs.findIndex(x => x.haveError === true) === 0 ? false : true;
+    let isValidated = inputs.findIndex(x => x.haveError === true) === 0 ? false : true;
+    if(isValidated){
+        let rows = [];
+        let row = {
+            name: name,
+            email: email.value,
+            subject: subject,
+            contact: number,
+            message: comments
+        };
+        if(localStorage.getItem("contactRows") !== null){
+            rows =  JSON.parse(localStorage.getItem("contactRows"));
+            rows.push(row);
+            rows = JSON.stringify(rows);
+            localStorage.setItem("contactRows", rows);
+        }else{
+            rows.push(row);
+            rows = JSON.stringify(rows);
+            localStorage.setItem("contactRows", rows);
+        }
+        fetchContacts();
+        let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('exampleModal'));
+        console.log(modal);
+        modal.hide();
+        name = "";
+        email.value = "";
+        subject = "";
+        number = "";
+        comments  = "";
+    }
 }
 
 function fadeIn() {
@@ -35,4 +64,22 @@ function fadeIn() {
             clearInterval(intervalId);
         }
     }, 200);
+}
+if(localStorage.getItem("contactRows") !== null){
+fetchContacts();
+}
+function fetchContacts(){
+    let contactRows = localStorage.getItem("contactRows");
+    let contactRowsTable = document.getElementById("contactRows");
+    contactRows = JSON.parse(contactRows);
+    contactRowsTable.innerHTML = "";
+    contactRows.forEach((contact) => {
+        contactRowsTable.innerHTML += `<tr>
+                                        <td>${contact.name}</td>
+                                        <td>${contact.email}</td>
+                                        <td>${contact.subject}</td>
+                                        <td>${contact.contact}</td>
+                                        <td>${contact.message}</td>
+                                        </tr>`;
+    });
 }
