@@ -1,0 +1,7 @@
+@import './variables.scss';
+
+@mixin theme($color, $fontSize) {
+    color: $color;
+    font-size: $fontSize;
+    background-color: $bg-grey;
+}

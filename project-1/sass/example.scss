@@ -1,0 +1,15 @@
+@import './utilities/mixins.scss';
+
+.sass-example{
+    background-color: yellow;
+    text-align: center;
+    .titles{
+        text-align: right;
+        h2{ @include theme(blue, 24px); }
+        h4{ @include theme(red, 20px); }
+    }
+    p{
+        @include theme(red, 20px);
+        font-weight: 600;
+    }
+}
