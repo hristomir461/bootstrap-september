@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html tips</title>
+    <!-- seo  -->
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <meta name="description" content="html tips and tricks for beginers">
+    <meta name="keywords" content="Html, tips, seo">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Ivan Ivanov">
+
+    <!-- open graph  -->
+    <meta property="og:title" content="html tips">
+    <meta property="og:description" content="html tips and tricks for beginers">
+    <meta property="og:image" content="https://bootstrap-september.netlify.app/img/background-mobile.webp">
+    <meta property="og:url" content="https://bootstrap-september.netlify.app">
+    <meta property="og:type" content="website">
+
+    <!-- multi-language option  -->
+    <link rel="alternate" hreflang="en" href="https://bootstrap-september.netlify.app/en">
+    <link rel="alternate" hreflang="bg" href="https://bootstrap-september.netlify.app/bg">
+
+    <!-- twitter open graph  -->
+    <meta name="twitter:card" content="https://bootstrap-september.netlify.app/img/background-mobile.webp">
+    <meta name="twitter:title" content="html tips">
+    <meta name="twitter:description" content="html tips and tricks for beginers">
+    <meta name="twitter:image" content="https://bootstrap-september.netlify.app/img/background-mobile.webp">
+    <meta name="twitter:site" content="@bootstrap-september.netlify.app">
+    <!-- <meta http-equiv="refresh" content="4;URL=https://advanceacademy.bg/"> -->
+    <!-- <base href="https://advanceacademy.bg/"  target="_blank"> -->
+</head>
+<style>
+    code{
+        background-color: #f4f4f4;
+        border-radius: 10%;
+        padding: 5px;
+    }
+</style>
+<body>
+    <!-- not leaking any link juice -->
+    <a href="https://google.com" rel="nofollow">google</a>
+    <!-- leaking link juice -->
+    <a href="https://google.com" rel="follow">google</a>
+    <a href="https://google.com">google</a>
+    <!-- recommended website -->
+    <a rel="cononical" href="https://google2.0.com">google</a>
+
+    <picture>
+        <source media="(min-width: 768px)" srcset="img/background-pc.webp">
+        <source media="(min-width: 375px)" srcset="img/background-mobile.webp">
+        <img rel="preload" loading="lazy" src="img/background-pc.webp" alt="background" width="300">
+    </picture>
+    <ul>
+        <h4>Advance Acacemy links</h4>
+        <li><a href="za-nas">История</a></li>
+        <li><a href="galeriya">Галерия</a></li>
+        <li><a href="medii">Медиите за нас</a></li>
+    </ul>
+    <h1>Tooltip & code</h1>
+    <abbr title="Hypertext Markup Language">HTML</abbr>
+    <article>
+        <p>To start typing html you have to start with the <code>&lt;html&gt;</code></p>
+    </article>
+    <br>
+    <hr>
+    <br>
+    <h1>Datalist</h1>
+    <input type="input" list="colors">
+    <datalist id="colors">
+        <option value="red"></option>
+        <option value="green"></option>
+        <option value="blue"></option>
+    </datalist>
+    <br>
+    <hr>
+    <br>
+    <h1>Dialog</h1>
+    <dialog>
+        <button onclick="closeMe()">X</button>
+        <p>This is a  <code>&lt;dialog&gt;</code></p>
+    </dialog>
+    <button onclick="openMe()">Open dialog</button>
+    <script>
+        function openMe(){
+            document.querySelector('dialog').showModal()
+        }
+        function closeMe(){
+            document.querySelector('dialog').close();
+        }
+    </script>
+      <br>
+      <hr>
+      <br>
+      <h1>Accordion</h1>
+    <details>
+        <summary>What is html?</summary>
+        <p>Hypertext Markup Language</p>
+    </details>
+    <br>
+    <hr>
+    <br>
+    <h1>Ruby</h1>
+    <ruby>
+        Main text
+        <rt>Little text</rt>
+    </ruby>
+    <br>
+    <hr>
+    <br>
+    <h1>Progress bar</h1>
+    <progress max="100" value="60"></progress>
+    <br>
+    <hr>
+    <br>
+    <h1>Meter bar</h1>
+    <meter min="0" max="100" value="66" low="30" high="60" optimum="80"></meter>
+    <br>
+    <hr>
+    <br>
+    <h1>Fieldset</h1>
+    <fieldset>
+        <legend>Heading</legend>
+        <p>Content</p>
+    </fieldset>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "SEO наръчник за начинаещи",
+          "author": {
+            "@type": "Person",
+            "name": "Иван Петров"
+          },
+          "datePublished": "2024-03-04",
+          "publisher": {
+            "@type": "Organization",
+            "name": "SEO Academy"
+          }
+        }
+        </script>
+</body>
+</html>
